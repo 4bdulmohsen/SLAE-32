@@ -1,0 +1,196 @@
+root@kali:~# msfvenom -p linux/x86/exec --payload-options
+Options for payload/linux/x86/exec:
+
+
+       Name: Linux Execute Command
+     Module: payload/linux/x86/exec
+   Platform: Linux
+       Arch: x86
+Needs Admin: No
+ Total size: 36
+       Rank: Normal
+
+Provided by:
+    vlad902 <vlad902@gmail.com>
+
+Basic options:
+Name  Current Setting  Required  Description
+----  ---------------  --------  -----------
+CMD                    yes       The command string to execute
+
+Description:
+  Execute an arbitrary command
+
+
+root@kali:~# msfvenom -p linux/x86/exec cmd='ls -la' | sctest -vvvvvvvvvv -S -s 10000000 -G exec.dot
+graph file exec.dot
+verbose = 10
+No platform was selected, choosing Msf::Module::Platform::Linux from the payload
+No Arch selected, selecting Arch: x86 from the payload
+No encoder or badchars specified, outputting raw payload
+Payload size: 42 bytes
+
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417000
+[emu 0x0x55fb164b5510 debug ] eax=0x00000000  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fce  ebp=0x00000000  esi=0x00000000  edi=0x00000000
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417000
+[emu 0x0x55fb164b5510 debug ] eax=0x00000000  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fce  ebp=0x00000000  esi=0x00000000  edi=0x00000000
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 6A0B                            push byte 0xb
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417002
+[emu 0x0x55fb164b5510 debug ] eax=0x00000000  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fca  ebp=0x00000000  esi=0x00000000  edi=0x00000000
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 58                              pop eax
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417003
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fce  ebp=0x00000000  esi=0x00000000  edi=0x00000000
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 99                              cwd 
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417004
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fce  ebp=0x00000000  esi=0x00000000  edi=0x00000000
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 52                              push edx
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417005
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fca  ebp=0x00000000  esi=0x00000000  edi=0x00000000
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 66682D63                        push word 0x632d
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417009
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fc8  ebp=0x00000000  esi=0x00000000  edi=0x00000000
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 89E7                            mov edi,esp
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x0041700b
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fc8  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 682F736800                      push dword 0x68732f
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417010
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fc4  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 682F62696E                      push dword 0x6e69622f
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417015
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00000000
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fc0  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 89E3                            mov ebx,esp
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417017
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00416fc0
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fc0  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 52                              push edx
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417018
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00416fc0
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fbc  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] E807000000                      call 0xc
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417024
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00416fc0
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fb8  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 57                              push edi
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417025
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00416fc0
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fb4  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 53                              push ebx
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417026
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00000000  edx=0x00000000  ebx=0x00416fc0
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fb0  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 89E1                            mov ecx,esp
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x00417028
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00416fb0  edx=0x00000000  ebx=0x00416fc0
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fb0  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] CD80                            int 0x80
+execve
+int execve (const char *dateiname=00416fc0={/bin/sh}, const char * argv[], const char *envp[]);
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x0041702a
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00416fb0  edx=0x00000000  ebx=0x00416fc0
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fb0  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+[emu 0x0x55fb164b5510 debug ] 0000                            add [eax],al
+cpu error error accessing 0x00000004 not mapped
+
+stepcount 15
+copying vertexes
+optimizing graph
+vertex 0x55fb16545ba0
+going forwards from 0x55fb16545ba0
+ -> vertex 0x55fb16545c70
+ -> vertex 0x55fb16545d80
+ -> vertex 0x55fb16546030
+ -> vertex 0x55fb165462e0
+ -> vertex 0x55fb16546590
+ -> vertex 0x55fb165469e0
+ -> vertex 0x55fb16546b50
+ -> vertex 0x55fb16546e30
+ -> vertex 0x55fb16547280
+ -> vertex 0x55fb165473f0
+ -> vertex 0x55fb165476a0
+ -> vertex 0x55fb16547950
+ -> vertex 0x55fb16547c00
+copying edges for 0x55fb16547c00
+ -> 0x55fb1654def0
+vertex 0x55fb16548020
+going forwards from 0x55fb16548020
+copying edges for 0x55fb16548020
+vertex 0x55fb16548d20
+going forwards from 0x55fb16548d20
+copying edges for 0x55fb16548d20
+[emu 0x0x55fb164b5510 debug ] cpu state    eip=0x0041702c
+[emu 0x0x55fb164b5510 debug ] eax=0x0000000b  ecx=0x00416fb0  edx=0x00000000  ebx=0x00416fc0
+[emu 0x0x55fb164b5510 debug ] esp=0x00416fb0  ebp=0x00000000  esi=0x00000000  edi=0x00416fc8
+[emu 0x0x55fb164b5510 debug ] Flags: 
+int execve (
+     const char * dateiname = 0x00416fc0 => 
+           = "/bin/sh";
+     const char * argv[] = [
+           = 0x00416fb0 => 
+               = 0x00416fc0 => 
+                   = "/bin/sh";
+           = 0x00416fb4 => 
+               = 0x00416fc8 => 
+                   = "-c";
+           = 0x00416fb8 => 
+               = 0x0041701d => 
+                   = "ls -la";
+           = 0x00000000 => 
+             none;
+     ];
+     const char * envp[] = 0x00000000 => 
+         none;
+) =  0;
+
+root@kali:~# dot exec.dot -Tpng -o exec.png ; to convert from dot to png
+
+
+root@kali:~# msfvenom -p linux/x86/exec cmd='ls -la' | ndisasm -u -
+No platform was selected, choosing Msf::Module::Platform::Linux from the payload
+No Arch selected, selecting Arch: x86 from the payload
+No encoder or badchars specified, outputting raw payload
+Payload size: 42 bytes
+
+00000000  6A0B              push byte +0xb
+00000002  58                pop eax
+00000003  99                cdq
+00000004  52                push edx
+00000005  66682D63          push word 0x632d
+00000009  89E7              mov edi,esp
+0000000B  682F736800        push dword 0x68732f
+00000010  682F62696E        push dword 0x6e69622f
+00000015  89E3              mov ebx,esp
+00000017  52                push edx
+00000018  E807000000        call 0x24
+0000001D  6C                insb
+0000001E  7320              jnc 0x40
+00000020  2D6C610057        sub eax,0x5700616c
+00000025  53                push ebx
+00000026  89E1              mov ecx,esp
+00000028  CD80              int 0x80
