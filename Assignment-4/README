@@ -1,0 +1,3 @@
+compilation : 
+
+gcc -m32 shellcode.c -fno-stack-protector -z execstack -o shellcode
